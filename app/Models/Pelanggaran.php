@@ -8,7 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Pelanggaran extends Model
 {
     use HasFactory;
-    
+
+    # Fillabel Table
+    protected $guarded = [];
+
+    public $timestamps = false;
     # Relasi To Siswa
     public function siswa()
     {

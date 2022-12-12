@@ -26,7 +26,7 @@ class PelanggaranController extends Controller
         Pelanggaran::insert([
             'nama_pelanggaran' => $request->nama_pelanggaran,
             'tindak_lanjut' => $request->tindak_lanjut,
-            'id_category' => $request->id_category
+            'poin' => $request->poin
         ]);
         return redirect()->route('pelanggaran')->with('success', 'Data Berhasil Di Tambahkan');
     }
@@ -41,8 +41,7 @@ class PelanggaranController extends Controller
     public function editpelanggaran($id)
     {
         $data = Pelanggaran::find($id);
-        $cat = Category::all();
-        return view('pelanggaran.editpelanggaran', compact('data','cat'));
+        return view('pelanggaran.editpelanggaran', compact('data'));
     }
     # Edit Action
     public function updatepelanggaran(Request $request, $id)
@@ -51,7 +50,7 @@ class PelanggaranController extends Controller
         $data->update([
             'nama_pelanggaran' => $request->nama_pelanggaran,
             'tindak_lanjut' => $request->tindak_lanjut,
-            'id_category' => $request->id_category
+            'poin' => $request->poin
         ]);
         return redirect()->route('pelanggaran')->with('success', 'Data Berhasil Di Edit');
     }

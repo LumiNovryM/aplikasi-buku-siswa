@@ -16,17 +16,15 @@ class PelanggaranSeeder extends Seeder
     public function run()
     {
         $data = [
-            ['nama_pelanggaran' => 'Datang Terlambat', 'tindak_lanjut' => 'Berbaris 30 Menit', 'id_category' => 1],
-            ['nama_pelanggaran' => 'Bolos Jam Pelajaran', 'tindak_lanjut' => 'Teguran', 'id_category' => 2],
-            ['nama_pelanggaran' => 'Tawuran', 'tindak_lanjut' => 'Panggilan Orang Tua', 'id_category' => 3],
-            ['nama_pelanggaran' => 'Berkelahi', 'tindak_lanjut' => 'Panggilan Orang Tua', 'id_category' => 3],
-            ['nama_pelanggaran' => 'Rambut Panjang', 'tindak_lanjut' => 'Teguran', 'id_category' => 1],
+            ['nama_pelanggaran' => 'Datang Terlambat', 'tindak_lanjut' => 'Berbaris 30 Menit', 'poin' => '10'],
+            ['nama_pelanggaran' => 'Bolos Jam Pelajaran', 'tindak_lanjut' => 'Berbaris 30 Menit', 'poin' => '20'],
+            ['nama_pelanggaran' => 'Berkelahi', 'tindak_lanjut' => 'Berbaris 30 Menit', 'poin' => '35'],
         ];
         foreach($data as $value){
             Pelanggaran::insert([
                 "nama_pelanggaran" => $value['nama_pelanggaran'],
                 "tindak_lanjut" => $value['tindak_lanjut'],
-                "id_category" => $value['id_category']
+                "poin" => $value['poin']
             ]);
         }
     }

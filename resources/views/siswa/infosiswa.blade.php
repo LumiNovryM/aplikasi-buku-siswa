@@ -49,7 +49,6 @@
                             <th scope="col">Nama</th>
                             <th scope="col">Pelanggaran</th>
                             <th scope="col">Tindak Lanjut</th>
-                            <th scope="col">Tingkat</th>
                             <th scope="col">Poin</th>
                           </tr>
                         </thead>
@@ -60,17 +59,25 @@
                             <td>{{ $dt->siswa->nama }}</td>
                             <td>{{ $dt->pelanggaran->nama_pelanggaran }}</td>
                             <td>{{ $dt->pelanggaran->tindak_lanjut }}</td>
-                            <td>{{ $dt->pelanggaran->category->tingkat_pelanggaran }}</td>
-                            <td>{{ $dt->pelanggaran->category->poin }}</td>
+                            <td>{{ $dt->pelanggaran->poin }}</td>
                         </tr>
-                        </tbody>
                         @endforeach
-                        {{-- <tbody>
-                            <tr>
-                                <th colspan="5">Total Poin</th>
-                                <th colspan="1"></th>
-                            </tr>
-                        </tbody> --}}
+                        </tbody>
+                        <tbody>
+                          <tr>
+                            <td colspan="4">Total Poin Pelanggaran :</td>
+                            @php
+                              $total = 0;
+                            @endphp
+                            @foreach ($data as $pel)
+                            <input type="hidden" value="{{ $pel->pelanggaran->poin }}">
+                            @php
+                              $total += $pel->pelanggaran->poin
+                            @endphp
+                            @endforeach
+                            <td>{{ $total }}</td>
+                          </tr>
+                        </tbody>
                     </table>
             </div>
         </div>

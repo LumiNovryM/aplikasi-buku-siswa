@@ -33,7 +33,6 @@
                         <th scope="col">#</th>
                         <th scope="col">Jenis Pelanggaran</th>
                         <th scope="col">Tindak Lanjut</th>
-                        <th scope="col">Tingkat Pelanggaran</th>
                         <th scope="col">Jumlah Poin</th>
                         <th scope="col">Aksi</th>
                       </tr>
@@ -44,8 +43,7 @@
                         <th scope="row">{{ $loop->iteration }}</th>
                         <td>{{ $data->nama_pelanggaran }}</td>
                         <td>{{ $data->tindak_lanjut }}</td>
-                        <td>{{ $data->category->tingkat_pelanggaran }}</td>
-                        <td>{{ $data->category->poin }}</td>
+                        <td>{{ $data->poin }}</td>
                         <td>
                             <a class="btn btn-warning" href="/editpelanggaran/{{ $data->id }}">Edit</a>
                             <a class="btn btn-danger" href="/deletepelanggaran/{{ $data->id }}">Delete</a>

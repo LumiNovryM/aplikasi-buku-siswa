@@ -17,8 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_pelanggaran');
             $table->string('tindak_lanjut');
-            $table->unsignedBigInteger('id_category');
-            $table->foreign('id_category')->references('id')->on('categories');
+            $table->string('poin');
         });
     }
 

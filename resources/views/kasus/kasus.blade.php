@@ -39,6 +39,7 @@
                         <th scope="col">Pelanggaran</th>
                         <th scope="col">Tindak Lanjut</th>
                         <th scope="col">Poin</th>
+                        <th scope="col">Action</th>
                       </tr>
                     </thead>
                     @foreach($data as $pel)
@@ -50,7 +51,10 @@
                         <td scope="row">{{ $pel->siswa->jurusan->jurusan }}</td>
                         <td scope="row">{{ $pel->pelanggaran->nama_pelanggaran }}</td>
                         <td scope="row">{{ $pel->pelanggaran->tindak_lanjut }}</td>
-                        <td scope="row">{{ $pel->pelanggaran->category->poin }}</td>
+                        <td scope="row">{{ $pel->pelanggaran->poin }}</td>
+                        <td scope="row">
+                          <a href="/deletekasus/{{ $pel->siswa_id }}" class="btn btn-danger">Delete</a>
+                        </td>
                       </tr>
                     </tbody>
                     @endforeach

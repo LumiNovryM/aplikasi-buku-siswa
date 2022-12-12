@@ -13,9 +13,13 @@ use Illuminate\Http\Request;
 class SiswaController extends Controller
 {
     # Index Data
-    public function index()
+    public function index(Request $request)
     {
-        $siswa = Siswa::with(['kelas','jurusan','guru'])->get();
+        if($request->has('search')){
+            $siswa = Siswa::with(['kelas','jurusan','guru'])->where('nama','LIKE','%'.$request->search.'%')->get();
+        }else{
+            $siswa = Siswa::with(['kelas','jurusan','guru'])->get();
+        }
         return view('siswa.siswa', compact('siswa'));
     }
     # Form Page

@@ -95,20 +95,6 @@ Route::post('/updatejurusan/{id}', [JurusanController::class, 'updatejurusan']);
 // 7.) Info Jurusan 
 Route::get('/infojurusan/{id}', [JurusanController::class, 'infojurusan']);
 
-## === Category Route === #
-// 1.) Index Category
-Route::get('/category', [CategoryController::class, 'index'])->name('category');
-// 2.) Tambah Category Page
-Route::get('/tambahcategory', [CategoryController::class, 'tambahcategory']);
-// 3.) Tambah Category Page
-Route::post('/insertcategory', [CategoryController::class, 'insertcategory']);
-// 4.) Delete Category
-Route::get('/deletecategory/{id}', [CategoryController::class, 'deletecategory']);
-// 5.) Edit Category Page
-Route::get('/editcategory/{id}', [CategoryController::class, 'editcategory']);
-// 6.) Edit Category Action
-Route::post('/updatecategory/{id}', [CategoryController::class, 'updatecategory']);
-
 ## === Pelanggaran Route === #
 // 1.) Index Pelanggaran
 Route::get('/pelanggaran', [PelanggaranController::class, 'index'])->name('pelanggaran');

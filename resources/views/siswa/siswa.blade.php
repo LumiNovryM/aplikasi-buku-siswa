@@ -2,6 +2,30 @@
 
 @section('title', 'Data Siswa')
 
+@section('search')
+<li class="nav-item">
+  <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+    <i class="fas fa-search"></i>
+  </a>
+  <div class="navbar-search-block">
+    <form class="form-inline">
+      <div class="input-group input-group-sm">
+        <form action="/siswa" method="get"></form>
+        <input class="form-control form-control-navbar" autocomplete="off" type="search" name="search" placeholder="Search" aria-label="Search">
+        </form>
+        <div class="input-group-append">
+          <button class="btn btn-navbar" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+          <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</li>
+@endsection
 
 @section('content')
 

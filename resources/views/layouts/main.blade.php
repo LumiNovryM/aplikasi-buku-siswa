@@ -241,14 +241,6 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/category" class="nav-link">
-              <i class="nav-icon fas fa-tags"></i>
-              <p>
-                Category Pelanggaran
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="/siswa" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>

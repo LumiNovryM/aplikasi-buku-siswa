@@ -27,7 +27,7 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <form method="POST" action="/insertpelanggaran">
+                <form method="POST" action="/updatepelanggaran/{{ $data->id }}">
                     @csrf
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Nama Pelangaran</label>
@@ -39,12 +39,7 @@
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputPassword1" class="form-label">Category Pelanggaran</label>
-                      <select class="form-select" name="id_category" aria-label="Default select example">
-                        <option value="{{ $data->id_category }}" selected>{{ $data->category->tingkat_pelanggaran }}</option>
-                        @foreach ($cat as $ct)
-                        <option value="{{ $ct->id }}">{{ $ct->tingkat_pelanggaran }}</option>
-                        @endforeach
-                      </select>
+                      <input type="number" autocomplete="off" value="{{ $data->poin }}" name="poin" class="form-control" id="exampleInputPassword1">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </form>

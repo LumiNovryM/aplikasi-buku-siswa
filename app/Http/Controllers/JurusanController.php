@@ -10,9 +10,13 @@ use Illuminate\Http\Request;
 class JurusanController extends Controller
 {
     # Index Data
-    public function index()
+    public function index(Request $request)
     {
-        $jurusan = Jurusan::all();
+        if($request->has('search')){
+            $jurusan = Jurusan::where('jurusan','LIKE','%'.$request->search.'%')->get();
+        }else{
+            $jurusan = Jurusan::all();
+        }
         return view('jurusan.jurusan', compact('jurusan'));
     }
     # Form Page

@@ -9,9 +9,13 @@ use Illuminate\Http\Request;
 class GuruController extends Controller
 {
     # Index Data
-    public function index()
+    public function index(Request $request)
     {
-        $guru = Guru::all();
+        if($request->has('search')){
+            $guru = Guru::where('nama','LIKE','%'.$request->search.'%')->get();
+        }else{
+            $guru = Guru::all();
+        }
         return view('guru.guru', compact('guru'));
     }
     # Form Page
